@@ -1,0 +1,33 @@
+﻿<Window x:Class="TextTransformationToolForWin.View.TransformationTool"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextTransformationToolForWin.View"
+        xmlns:vm="clr-namespace:TextTransformationToolForWin.ViewModel"
+        mc:Ignorable="d"
+        Title="TransformationTool" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:TransFormationToolViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <TextBox x:Name="InputTextBox" 
+                Margin="10,10,0,10" TextWrapping="Wrap" Text="{Binding Input}" 
+                 HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="300"
+                 VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
+        <TextBox x:Name="OutputTextBox"
+                Margin="450,10,10,10" TextWrapping="Wrap" Text="{Binding Output}" 
+                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsReadOnly="True"
+                 VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
+        
+        <StackPanel HorizontalAlignment="Left" Height="414" Margin="315,10,0,0" VerticalAlignment="Top" Width="130">
+            <Button x:Name="ToLowerButton" Content="A→a" Command="{Binding ToLowerCommand}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="130"/>
+            <Button x:Name="ToUpperButton" Content="a→A" Command="{Binding ToUpperCommand}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="130"/>
+            <Button x:Name="ToCamelCaseButton" Content="ToCamel" Command="{Binding ToCamelCaseCommand}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="130"/>
+            <Button x:Name="ToPascalCaseButton" Content="ToPascal" Command="{Binding ToPascalCaseCommand}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="130"/>
+            <Button x:Name="ToLowerSnakeCaseButton" Content="to__snake" Command="{Binding ToLowerSnakeCaseCommand}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="130"/>
+            <Button x:Name="ToUpperSnakeCaseButton" Content="TO__SNAKE" Command="{Binding ToUpperSnakeCaseCommand}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="130"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
